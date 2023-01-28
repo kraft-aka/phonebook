@@ -1,5 +1,10 @@
 const phoneList = [];
 
+// references DOM elements
+const darkModeBtnEl = document.querySelector(".change-mode");
+const el = document.body;
+const container = document.querySelector(".container");
+
 // creates person
 const person = (firstName, lastName, phoneNumber, address) => {
   return {
@@ -44,7 +49,8 @@ const addNumber = (arr, obj) => {
 const showAllNumbers = (arr) => {
   return arr.forEach((person, id) =>
     console.log(
-      `${id + 1}:  ${person.firstName} ${person.lastName} - ${person.phoneNumber
+      `${id + 1}:  ${person.firstName} ${person.lastName} - ${
+        person.phoneNumber
       }`
     )
   );
@@ -54,11 +60,11 @@ const showAllNumbers = (arr) => {
 const searchNumber = (arr, query) => {
   const found = query
     ? arr.filter(
-      (item) =>
-        item.firstName.toLowerCase() == query ||
-        item.lastName == query ||
-        item.phoneNumber == query
-    )
+        (item) =>
+          item.firstName.toLowerCase() == query ||
+          item.lastName == query ||
+          item.phoneNumber == query
+      )
     : "Not found!";
 
   return found.map((item) => item.phoneNumber).toString();
@@ -73,3 +79,20 @@ addNumber(phoneList, p3);
 //console.log(phoneList)
 
 showAllNumbers(phoneList);
+
+// mode toggler. swithches to dark and light modes
+const switchToDarkMode = () => {
+  el.classList.toggle("dark-mode");
+  container.classList.toggle("dark-mode");
+  if (darkModeBtnEl.value == "light mode") {
+    darkModeBtnEl.value = "dark mode";
+    darkModeBtnEl.innerHTML = "dark mode";
+    darkModeBtnEl.style.backgroundColor = "#000";
+  } else {
+    darkModeBtnEl.value = "light mode";
+    darkModeBtnEl.innerHTML = "light mode";
+    darkModeBtnEl.style.backgroundColor = "#0096c7";
+  }
+};
+
+darkModeBtnEl.addEventListener("click", switchToDarkMode);
