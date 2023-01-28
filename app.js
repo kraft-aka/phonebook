@@ -28,13 +28,20 @@ const addNumber = (arr, obj) => {
 
 // TODO --->
 // add search phone func
-// add display all numbers func
 // add css
 // create page and display
 // render DOM
+
+
+// displays all persons numbers
+const showAllNumbers = (arr) => {
+  return arr.forEach((person, id) => console.log(`${id+1}:  ${person.firstName} ${person.lastName} - ${person.phoneNumber}`));
+}
 
 p2.changeNumber = '1122233654444'
 
 addNumber(phoneList, p1);
 addNumber(phoneList, p2)
 console.log(phoneList)
+
+showAllNumbers(phoneList)
