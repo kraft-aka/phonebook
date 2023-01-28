@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Document</title>
 </head>
+
 <body>
   <header>
-    <h1>Phonebook</h1>
+    <h1> <i class="fa fa-address-book"></i> Phonebook</h1>
   </header>
   <div class="container">
-    <label for="first-name">first name</label>
+    <label for="first-name"> first name</label>
     <input type="text" id="first-name" class="first-name" placeholder="Enter first name">
     <label for="last-name">last name</label>
     <input type="text" id="last-name" class="last-name" placeholder="Enter last name">
-    <div class="output"></div>
+    <div class="output" class="output-null"></div>
     <div class="btns">
-      <button class="add">add</button>
-      <button class="delete">delete</button>
-      <button class="search">search</button>
-      <button class="update">update</button>
+      <button class="add"> <i class="fa fa-user-plus"></i> add</button>
+      <button class="delete"><i class="fa fa-remove"></i>delete</button>
+      <button class="search"> <i class="fa fa-search"></i> search</button>
+      <button class="update"> <i class="fa fa-wrench"></i> update</button>
     </div>
   </div>
   <script src="app.js"></script>
 </body>
+
 </html>

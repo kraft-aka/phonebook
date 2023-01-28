@@ -10,7 +10,7 @@ body {
   width: 100wh;
   height: 100vh;
   background-color: #caf0f8;
-  color:#03045e ;
+  color: #03045e;
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
 }
@@ -38,11 +38,11 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color:#0096c7 ;
+  background-color: #0096c7;
   padding: 2em 3.5em;
   margin: 2em;
   border: none;
-  border-radius: .5em ;
+  border-radius: .5em;
   box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -51,6 +51,12 @@ input {
   height: 3em;
   padding: 0.5em;
   outline: none;
+}
+
+input[type=text] {
+  font-size: inherit;
+  font-weight: 700;
+  color: #03045e;
 }
 
 /* Buttons */
@@ -71,8 +77,21 @@ button {
   transition: .4s all ease-in;
 }
 
+i {
+  margin-right: 0.2em;
+}
+
 button:hover {
   cursor: pointer;
   background-color: #000;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Output area */
+.output {
+  display: block;
+  background-color: #023e8a;
+  width: 100%;
+  height: 2.5em;
+  margin: 2em 0;
 }
