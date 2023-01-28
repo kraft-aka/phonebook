@@ -36,7 +36,6 @@ const addNumber = (arr, obj) => {
 };
 
 // TODO --->
-// add search phone func
 // add css
 // create page and display
 // render DOM
@@ -51,6 +50,7 @@ const showAllNumbers = (arr) => {
   );
 };
 
+// searchs number
 const searchNumber = (arr, query) => {
   const found = query
     ? arr.filter(
