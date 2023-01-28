@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100wh;
+  height: 100vh;
+  background-color: #caf0f8;
+  color:#03045e ;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+}
+
+/* Typography */
+
+h1 {
+  font-size: 3rem;
+}
+
+header {
+  margin: 2em;
+  text-align: center;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: .5em 0;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:#0096c7 ;
+  padding: 2em 3.5em;
+  margin: 2em;
+  border: none;
+  border-radius: .5em ;
+  box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+input {
+  width: 100%;
+  height: 3em;
+  padding: 0.5em;
+  outline: none;
+}
+
+/* Buttons */
+.btns {
+  margin: 2em 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-size: 1rem;
+  padding: .8em 1.5em;
+  margin: auto 1.5em;
+  border: 0.2em solid #000;
+  background-color: #023e8a;
+  color: #fff;
+  transition: .4s all ease-in;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #000;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
