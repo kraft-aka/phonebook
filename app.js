@@ -41,8 +41,6 @@ const addNumber = (arr, obj) => {
 };
 
 // TODO --->
-// add css
-// create page and display
 // render DOM
 
 // displays all persons numbers
@@ -94,5 +92,22 @@ const switchToDarkMode = () => {
     darkModeBtnEl.style.backgroundColor = "#0096c7";
   }
 };
+
+// array of strings for document's title
+const docTitles = [
+  "Welcome 👋 to Phonebook!",
+  "Seacrh 🤓for any number.",
+  "Save new number to Phonebook",
+  "Press '👍' if you liked it"
+];
+
+let counter = 0;
+let time = 2000;
+
+// updates document's title with multiple titles
+setInterval(() => {
+  document.title = docTitles[counter % docTitles.length];
+  counter++;
+}, time);
 
 darkModeBtnEl.addEventListener("click", switchToDarkMode);
