@@ -5,6 +5,12 @@ const darkModeBtnEl = document.querySelector(".change-mode");
 const el = document.body;
 const container = document.querySelector(".container");
 
+// get input 
+const firstNameEl = document.querySelector('#first-name').value
+const lastNameEl = document.querySelector('#last-name').value 
+const searchBtnEl = document.querySelector('.search');
+
+
 // creates person
 const person = (firstName, lastName, phoneNumber, address) => {
   return {
@@ -111,3 +117,11 @@ setInterval(() => {
 }, time);
 
 darkModeBtnEl.addEventListener("click", switchToDarkMode);
+
+// get number 
+// searchBtnEl.addEventListener('click', e => {
+//   e.preventDefault();
+//   searchNumber(phoneList,firstNameEl)
+// })
+
+// TODO fix this function
