@@ -4,6 +4,7 @@ const phoneList = [];
 const darkModeBtnEl = document.querySelector(".change-mode");
 const el = document.body;
 const container = document.querySelector(".container");
+const outputEl = document.querySelector('.output');
 
 // get input 
 const firstNameEl = document.querySelector('#first-name').value
@@ -119,9 +120,18 @@ setInterval(() => {
 darkModeBtnEl.addEventListener("click", switchToDarkMode);
 
 // get number 
-// searchBtnEl.addEventListener('click', e => {
-//   e.preventDefault();
-//   searchNumber(phoneList,firstNameEl)
-// })
+searchBtnEl.addEventListener('click', e => {
+  e.preventDefault();
+  outputEl.innerHTML = ''
+  console.log(e.target.value)
+  if(firstNameEl.length || lastNameEl.length) {
+    const found = searchNumber(phoneList, firstNameEl)
+    outputEl.innerHTML = found
+  } else {
+    outputEl.innerHTML= 'Number not found'
+  }
+})
 
-// TODO fix this function
+// TODO fix this function, not fixed yet.
+
+// TODO modal 
