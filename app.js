@@ -133,9 +133,16 @@ darkModeBtnEl.addEventListener("click", switchToDarkMode);
 searchBtnEl.addEventListener("click", (e) => {
   e.preventDefault();
   outputEl.innerHTML = "";
-  console.log(firstNameEl.value);
   searchNumber();
+  if(!searchNumber()) {
+    outputEl.innerHTML = 'not found'
+  } 
 });
+
+// on focus clears the output
+firstNameEl.addEventListener('focus', (e) => {
+  outputEl.innerHTML = ''
+})
 
 // TODO fix this function, not fixed yet.
 
