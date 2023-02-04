@@ -7,7 +7,7 @@ const container = document.querySelector(".container");
 const outputEl = document.querySelector(".output");
 
 // get input
-const firstNameEl = document.getElementById("first-name").value;
+const firstNameEl = document.getElementById("first-name");
 const lastNameEl = document.querySelector("#last-name").value;
 const searchBtnEl = document.querySelector(".search");
 
@@ -61,17 +61,28 @@ const showAllNumbers = (arr) => {
 };
 
 // searchs number
-const searchNumber = (arr, query) => {
-  const found = query
-    ? arr.filter(
-        (item) =>
-          item.firstName.toLowerCase() == query ||
-          item.lastName == query ||
-          item.phoneNumber == query
-      )
-    : "Not found!";
+// const searchNumber = (arr, query) => {
+//   const found = query
+//     ? arr.filter(
+//         (item) =>
+//           item.firstName.toLowerCase() == query ||
+//           item.lastName == query ||
+//           item.phoneNumber == query
+//       )
+//     : "Not found!";
 
-  return found.map((item) => item.phoneNumber).toString();
+//   return found.map((item) => item.phoneNumber).toString();
+// };
+const searchNumber = () => {
+  const query = firstNameEl.value;
+  if (query === 0) {
+    outputEl.innerHTML = "Please enter name!";
+  }
+  const found = phoneList
+    .filter((name) => name.firstName.toLowerCase() === query)
+    .map((num) => num.phoneNumber);
+
+  outputEl.innerHTML = found;
 };
 
 p2.changeNumber = "1122233654444";
@@ -122,13 +133,8 @@ darkModeBtnEl.addEventListener("click", switchToDarkMode);
 searchBtnEl.addEventListener("click", (e) => {
   e.preventDefault();
   outputEl.innerHTML = "";
-  console.log(firstNameEl);
-  if (firstNameEl.length || lastNameEl.length) {
-    const found = searchNumber(phoneList, firstNameEl);
-    outputEl.innerHTML = found;
-  } else {
-    outputEl.innerHTML = "Number not found";
-  }
+  console.log(firstNameEl.value);
+  searchNumber();
 });
 
 // TODO fix this function, not fixed yet.
