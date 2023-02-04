@@ -53,8 +53,7 @@ const addNumber = (arr, obj) => {
 const showAllNumbers = (arr) => {
   return arr.forEach((person, id) =>
     console.log(
-      `${id + 1}:  ${person.firstName} ${person.lastName} - ${
-        person.phoneNumber
+      `${id + 1}:  ${person.firstName} ${person.lastName} - ${person.phoneNumber
       }`
     )
   );
@@ -75,14 +74,20 @@ const showAllNumbers = (arr) => {
 // };
 const searchNumber = () => {
   const query = firstNameEl.value;
-  if (query === 0) {
-    outputEl.innerHTML = "Please enter name!";
-  }
   const found = phoneList
     .filter((name) => name.firstName.toLowerCase() === query)
     .map((num) => num.phoneNumber);
 
-  outputEl.innerHTML = found;
+  // TODO --> fix a case if the number is not found in phonelist  
+  // if (!phoneList.includes(query.firstName)) {
+  //   outputEl.innerHTML = "not found!";
+  // }
+  if (found) {
+    outputEl.innerHTML = found;
+  }
+  if (!query.length) {
+    outputEl.innerHTML = "please enter name";
+  }
 };
 
 p2.changeNumber = "1122233654444";
@@ -132,17 +137,14 @@ darkModeBtnEl.addEventListener("click", switchToDarkMode);
 // get number
 searchBtnEl.addEventListener("click", (e) => {
   e.preventDefault();
-  outputEl.innerHTML = "";
   searchNumber();
-  if(!searchNumber()) {
-    outputEl.innerHTML = 'not found'
-  } 
 });
 
 // on focus clears the output
-firstNameEl.addEventListener('focus', (e) => {
-  outputEl.innerHTML = ''
-})
+firstNameEl.addEventListener("focus", (e) => {
+  outputEl.innerHTML = "";
+  firstNameEl.value = "";
+});
 
 // TODO fix this function, not fixed yet.
 
