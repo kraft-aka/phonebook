@@ -4,13 +4,12 @@ const phoneList = [];
 const darkModeBtnEl = document.querySelector(".change-mode");
 const el = document.body;
 const container = document.querySelector(".container");
-const outputEl = document.querySelector('.output');
+const outputEl = document.querySelector(".output");
 
-// get input 
-const firstNameEl = document.querySelector('#first-name').value
-const lastNameEl = document.querySelector('#last-name').value 
-const searchBtnEl = document.querySelector('.search');
-
+// get input
+const firstNameEl = document.getElementById("first-name").value;
+const lastNameEl = document.querySelector("#last-name").value;
+const searchBtnEl = document.querySelector(".search");
 
 // creates person
 const person = (firstName, lastName, phoneNumber, address) => {
@@ -29,7 +28,7 @@ const person = (firstName, lastName, phoneNumber, address) => {
     },
 
     set changeLastName(newLastName) {
-      this.lastNamer = newLastName;
+      this.lastName = newLastName;
     },
 
     set changeAddress(newAddress) {
@@ -105,7 +104,7 @@ const docTitles = [
   "Welcome 👋 to Phonebook!",
   "Seacrh 🤓for any number.",
   "Save new number to Phonebook",
-  "Press '👍' if you liked it"
+  "Press '👍' if you liked it",
 ];
 
 let counter = 0;
@@ -119,19 +118,19 @@ setInterval(() => {
 
 darkModeBtnEl.addEventListener("click", switchToDarkMode);
 
-// get number 
-searchBtnEl.addEventListener('click', e => {
+// get number
+searchBtnEl.addEventListener("click", (e) => {
   e.preventDefault();
-  outputEl.innerHTML = ''
-  console.log(e.target.value)
-  if(firstNameEl.length || lastNameEl.length) {
-    const found = searchNumber(phoneList, firstNameEl)
-    outputEl.innerHTML = found
+  outputEl.innerHTML = "";
+  console.log(firstNameEl);
+  if (firstNameEl.length || lastNameEl.length) {
+    const found = searchNumber(phoneList, firstNameEl);
+    outputEl.innerHTML = found;
   } else {
-    outputEl.innerHTML= 'Number not found'
+    outputEl.innerHTML = "Number not found";
   }
-})
+});
 
 // TODO fix this function, not fixed yet.
 
-// TODO modal 
+// TODO modal
